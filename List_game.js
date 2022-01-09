@@ -16,21 +16,34 @@ const factors = number => {
     let factors = []
     let i = 2;
     
-    while(i <= biggest_factor) {
+    while(i < biggest_factor) {
         if(number % i == 0) {
-            factors.push(i)
-            if(biggest_factor == Infinity) {
-                biggest_factor = number/i;
-            }
+            factors.push(i, number/i)
+            biggest_factor = number/i;
         }
         i++;
     }
-
-    return factors;
+    factors.push(number)
+    return factors.sort(function(a, b){return a - b});
     
 }
 
-console.log(factors(10995116277))
+const find_biggest_k = (number, factors) => {
+    let factor_length = factors.length
+    let i = 0;
+    let biggest_k = 0;
+    while(factors[i] != undefined) {
+        let j = i;
+        let local_total = 0
+        while(true) {
+
+        }
+        i++;
+    }
+    //Der skal sikkert bruges recursive ;(
+}
+
+console.log(factors(1099511627776))
 
 rl.on('line', (input) => {
     
